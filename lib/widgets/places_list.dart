@@ -1,3 +1,4 @@
+import 'package:favorite_places/main.dart';
 import 'package:favorite_places/models/place.dart';
 import 'package:flutter/material.dart';
 
@@ -10,12 +11,22 @@ class PlacesList extends StatelessWidget {
   Widget build(BuildContext context) {
     if (places.isEmpty) {
       return Center(
-        child: Text(
-          'No Places added yet',
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: Theme.of(context).colorScheme.onSurface),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.home,
+              size: 200,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            Text(
+              'No Places added yet',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.onSurface),
+            ),
+          ],
         ),
       );
     }
